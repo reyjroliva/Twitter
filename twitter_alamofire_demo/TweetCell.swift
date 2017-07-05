@@ -29,12 +29,34 @@ class TweetCell: UITableViewCell {
             favoritesCount.text = "\(String(tweet.favoriteCount!))"
             retweetCount.text = String(tweet.retweetCount)
             userProfileImage.af_setImage(withURL: tweet.user.profilePicture!)
-            
-
-            
-            
         }
     }
+    
+    
+    @IBAction func favoriteButton(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        tweet.favorited = sender.isSelected
+        if (tweet.favorited)! {
+            tweet.favoriteCount! += 1
+            favoritesCount.text = "\(String(tweet.favoriteCount!))"
+        } else {
+            tweet.favoriteCount! -= 1
+            favoritesCount.text = "\(String(tweet.favoriteCount!))"
+        }
+    }
+    
+    @IBAction func retweetButton(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        tweet.retweeted = sender.isSelected
+        if (tweet.retweeted) {
+            tweet.retweetCount += 1
+            retweetCount.text = String(tweet.retweetCount)
+        } else {
+            tweet.retweetCount -= 1
+            retweetCount.text = String(tweet.retweetCount)
+        }
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
