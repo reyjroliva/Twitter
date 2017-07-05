@@ -12,11 +12,7 @@ import AlamofireImage
 class TimelineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tweets: [Tweet] = []
-
-    
     @IBOutlet weak var tableView: UITableView!
-    
-   
     
     
     override func viewDidLoad() {

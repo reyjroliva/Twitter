@@ -26,7 +26,7 @@ class TweetCell: UITableViewCell {
             userHandleLabel.text = "@"+tweet.user.screenName!
             tweetTextLabel.text = tweet.text
             tweetDateLabel.text = tweet.createdAtString
-            favoritesCount.text = String(describing: tweet.favoriteCount)
+            favoritesCount.text = "\(String(tweet.favoriteCount!))"
             retweetCount.text = String(tweet.retweetCount)
             userProfileImage.af_setImage(withURL: tweet.user.profilePicture!)
             
