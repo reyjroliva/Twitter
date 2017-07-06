@@ -66,20 +66,20 @@ class TweetCell: UITableViewCell {
             tweet.retweetCount += 1
             retweetCount.text = String(tweet.retweetCount)
             APIManager.shared.retweet(tweet) { (tweet: Tweet?, error: Error?) in
-                if let error = error {
+                if let  error = error {
                     print("Error retweeting tweet: \(error.localizedDescription)")
-                } else if  let tweet = tweet {
-                    print("Successfully retweeting the following Tweet: \n\(tweet.text)")
+                } else if let tweet = tweet {
+                    print("Successfully retweeted the following Tweet: \n\(tweet.text)")
                 }
             }
         } else {
             tweet.retweetCount -= 1
             retweetCount.text = String(tweet.retweetCount)
             APIManager.shared.unretweet(tweet) { (tweet: Tweet?, error: Error?) in
-                if let error = error {
+                if let  error = error {
                     print("Error unretweeting tweet: \(error.localizedDescription)")
-                } else if  let tweet = tweet {
-                    print("Successfully unretweeting the following Tweet: \n\(tweet.text)")
+                } else if let tweet = tweet {
+                    print("Successfully unretweeted the following Tweet: \n\(tweet.text)")
                 }
             }
         }
