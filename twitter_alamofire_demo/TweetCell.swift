@@ -39,9 +39,23 @@ class TweetCell: UITableViewCell {
         if (tweet.favorited)! {
             tweet.favoriteCount! += 1
             favoritesCount.text = "\(String(tweet.favoriteCount!))"
+            APIManager.shared.favorite(tweet) { (tweet: Tweet?, error: Error?) in
+                if let error = error {
+                    print("Error favoriting tweet: \(error.localizedDescription)")
+                } else if let tweet = tweet {
+                    print("Successfully favorited the following Tweet: \n\(tweet.text)")
+                }
+            }
         } else {
             tweet.favoriteCount! -= 1
             favoritesCount.text = "\(String(tweet.favoriteCount!))"
+            APIManager.shared.unfavorite(tweet) { (tweet: Tweet?, error: Error?) in
+                if let error = error {
+                    print("Error unfavoriting tweet: \(error.localizedDescription)")
+                } else if  let tweet = tweet {
+                    print("Successfully unfavorited the following Tweet: \n\(tweet.text)")
+                }
+            }
         }
     }
     
@@ -51,9 +65,23 @@ class TweetCell: UITableViewCell {
         if (tweet.retweeted) {
             tweet.retweetCount += 1
             retweetCount.text = String(tweet.retweetCount)
+            APIManager.shared.retweet(tweet) { (tweet: Tweet?, error: Error?) in
+                if let error = error {
+                    print("Error retweeting tweet: \(error.localizedDescription)")
+                } else if  let tweet = tweet {
+                    print("Successfully retweeting the following Tweet: \n\(tweet.text)")
+                }
+            }
         } else {
             tweet.retweetCount -= 1
             retweetCount.text = String(tweet.retweetCount)
+            APIManager.shared.unretweet(tweet) { (tweet: Tweet?, error: Error?) in
+                if let error = error {
+                    print("Error unretweeting tweet: \(error.localizedDescription)")
+                } else if  let tweet = tweet {
+                    print("Successfully unretweeting the following Tweet: \n\(tweet.text)")
+                }
+            }
         }
     }
     
