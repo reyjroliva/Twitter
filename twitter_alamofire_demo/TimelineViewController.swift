@@ -9,10 +9,25 @@
 import UIKit
 import AlamofireImage
 
-class TimelineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TimelineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate {
+    
     
     var tweets: [Tweet] = []
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    func  did(post: Tweet) {
+        APIManager.shared.getHomeTimeLine { (tweets, error) in
+            if let tweets = tweets {
+                self.tweets = tweets
+                self.tableView.reloadData()
+            } else if let error = error {
+                print("Error getting home timeline: " + error.localizedDescription)
+            }
+        }
+        
+        tableView.reloadData()
+    }
     
     
     override func viewDidLoad() {
@@ -41,6 +56,9 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    @IBAction func composeButton(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "composeSegue", sender: nil)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tweets.count
     }
@@ -84,6 +102,14 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func didTapLogout(_ sender: Any) {
         APIManager.shared.logout()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "composeSegue" {
+            let destinationViewController = segue.destination as! ComposeViewController
+            destinationViewController.delegate = self
+        }
+    }
+
     
     
     /*
