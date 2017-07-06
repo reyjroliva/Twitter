@@ -37,23 +37,23 @@ class TweetCell: UITableViewCell {
         sender.isSelected = !sender.isSelected
         tweet.favorited = sender.isSelected
         if (tweet.favorited)! {
-            tweet.favoriteCount! += 1
-            favoritesCount.text = "\(String(tweet.favoriteCount!))"
             APIManager.shared.favorite(tweet) { (tweet: Tweet?, error: Error?) in
                 if let error = error {
                     print("Error favoriting tweet: \(error.localizedDescription)")
                 } else if let tweet = tweet {
                     print("Successfully favorited the following Tweet: \n\(tweet.text)")
+                    self.tweet.favoriteCount! += 1
+                    self.favoritesCount.text = "\(String(tweet.favoriteCount!))"
                 }
             }
         } else {
-            tweet.favoriteCount! -= 1
-            favoritesCount.text = "\(String(tweet.favoriteCount!))"
             APIManager.shared.unfavorite(tweet) { (tweet: Tweet?, error: Error?) in
                 if let error = error {
                     print("Error unfavoriting tweet: \(error.localizedDescription)")
                 } else if  let tweet = tweet {
                     print("Successfully unfavorited the following Tweet: \n\(tweet.text)")
+                    self.tweet.favoriteCount! -= 1
+                    self.favoritesCount.text = "\(String(tweet.favoriteCount!))"
                 }
             }
         }
@@ -63,23 +63,23 @@ class TweetCell: UITableViewCell {
         sender.isSelected = !sender.isSelected
         tweet.retweeted = sender.isSelected
         if (tweet.retweeted) {
-            tweet.retweetCount += 1
-            retweetCount.text = String(tweet.retweetCount)
             APIManager.shared.retweet(tweet) { (tweet: Tweet?, error: Error?) in
                 if let  error = error {
                     print("Error retweeting tweet: \(error.localizedDescription)")
                 } else if let tweet = tweet {
                     print("Successfully retweeted the following Tweet: \n\(tweet.text)")
+                    self.tweet.retweetCount += 1
+                    self.retweetCount.text = String(tweet.retweetCount)
                 }
             }
         } else {
-            tweet.retweetCount -= 1
-            retweetCount.text = String(tweet.retweetCount)
             APIManager.shared.unretweet(tweet) { (tweet: Tweet?, error: Error?) in
                 if let  error = error {
                     print("Error unretweeting tweet: \(error.localizedDescription)")
                 } else if let tweet = tweet {
                     print("Successfully unretweeted the following Tweet: \n\(tweet.text)")
+                    self.tweet.retweetCount -= 1
+                    self.retweetCount.text = String(tweet.retweetCount)
                 }
             }
         }
