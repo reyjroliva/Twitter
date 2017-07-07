@@ -20,6 +20,7 @@ class ComposeViewController: UIViewController {
     var user: User = User.current!
     @IBOutlet weak var userProfileImage: UIImageView!
     @IBOutlet weak var tweetTextView: RSKPlaceholderTextView!
+    @IBOutlet weak var tweetButton: UIButton!
     
     
     
@@ -29,7 +30,8 @@ class ComposeViewController: UIViewController {
         userProfileImage.layer.masksToBounds = false
         userProfileImage.layer.cornerRadius = userProfileImage.frame.height/2
         userProfileImage.clipsToBounds = true
-
+        tweetTextView.layer.cornerRadius = 8
+        tweetButton.layer.cornerRadius = 8
 
         // Do any additional setup after loading the view.
     }

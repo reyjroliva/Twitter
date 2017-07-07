@@ -259,7 +259,7 @@
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KCI-NJ-eyE" customClass="RSKPlaceholderTextView" customModule="RSKPlaceholderTextView">
                                 <rect key="frame" x="16" y="76" width="343" height="150"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.79997451382600815" green="0.79610990264810466" blue="0.80383912500391153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="lyD-b7-ENl"/>
                                 </constraints>
@@ -268,22 +268,28 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="What's happening?"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" red="0.80835087439999997" green="0.80835087439999997" blue="0.80835087439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" red="0.97998042740000002" green="0.99996114380000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnJ-Ep-mRr">
-                                <rect key="frame" x="288" y="234" width="55" height="36"/>
+                                <rect key="frame" x="273" y="234" width="70" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.059605572920000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Icg-LX-X9C"/>
+                                    <constraint firstAttribute="height" constant="30" id="OZm-rC-QnA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Tweet">
-                                    <color key="titleColor" red="0.31691014766693115" green="0.6245807409286499" blue="0.91377359628677368" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="1" green="0.9999879599" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapPost:" destination="TNh-bs-PYu" eventType="touchUpInside" id="rJx-AD-rXJ"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.83140099048614502" green="0.83138537406921387" blue="0.83139598369598389" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="yoP-of-Awj" firstAttribute="centerY" secondItem="Kmp-Wb-fTS" secondAttribute="centerY" id="Ozj-zO-5sk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jnJ-Ep-mRr" secondAttribute="trailing" constant="16" id="VrA-ml-HD6"/>
@@ -297,6 +303,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tweetButton" destination="jnJ-Ep-mRr" id="t9n-vW-hig"/>
                         <outlet property="tweetTextView" destination="KCI-NJ-eyE" id="abm-YR-ovv"/>
                         <outlet property="userProfileImage" destination="Kmp-Wb-fTS" id="Bwb-9h-SpT"/>
                     </connections>
