@@ -223,32 +223,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kmp-Wb-fTS">
-                                <rect key="frame" x="16" y="20" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kmp-Wb-fTS">
+                                <rect key="frame" x="16" y="28" width="40" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.059605572920000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Qfr-F2-gc7"/>
+                                    <constraint firstAttribute="width" constant="40" id="U9J-LJ-Ugc"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoP-of-Awj">
-                                <rect key="frame" x="324" y="23" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoP-of-Awj">
+                                <rect key="frame" x="324" y="30.5" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="qeI-pX-y6Y"/>
+                                    <constraint firstAttribute="height" constant="35" id="wRU-v3-bBF"/>
+                                </constraints>
                                 <state key="normal" image="close-icon"/>
                                 <connections>
                                     <action selector="closeButton:" destination="TNh-bs-PYu" eventType="touchUpInside" id="3T9-kj-jrk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnJ-Ep-mRr">
-                                <rect key="frame" x="291" y="220" width="68" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Tweet"/>
-                                <connections>
-                                    <action selector="didTapPost:" destination="TNh-bs-PYu" eventType="touchUpInside" id="rJx-AD-rXJ"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KCI-NJ-eyE" customClass="RSKPlaceholderTextView" customModule="RSKPlaceholderTextView">
-                                <rect key="frame" x="16" y="68" width="343" height="144"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KCI-NJ-eyE" customClass="RSKPlaceholderTextView" customModule="RSKPlaceholderTextView">
+                                <rect key="frame" x="16" y="76" width="343" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="lyD-b7-ENl"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
@@ -258,8 +257,29 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnJ-Ep-mRr">
+                                <rect key="frame" x="288" y="234" width="55" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Tweet">
+                                    <color key="titleColor" red="0.31691014766693115" green="0.6245807409286499" blue="0.91377359628677368" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapPost:" destination="TNh-bs-PYu" eventType="touchUpInside" id="rJx-AD-rXJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yoP-of-Awj" firstAttribute="centerY" secondItem="Kmp-Wb-fTS" secondAttribute="centerY" id="Ozj-zO-5sk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jnJ-Ep-mRr" secondAttribute="trailing" constant="16" id="VrA-ml-HD6"/>
+                            <constraint firstAttribute="trailing" secondItem="KCI-NJ-eyE" secondAttribute="trailing" constant="16" id="VuF-yc-2Hh"/>
+                            <constraint firstItem="Kmp-Wb-fTS" firstAttribute="top" secondItem="uYg-6s-RBO" secondAttribute="bottom" constant="8" id="dNN-Yg-4jl"/>
+                            <constraint firstItem="KCI-NJ-eyE" firstAttribute="top" secondItem="Kmp-Wb-fTS" secondAttribute="bottom" constant="8" id="fzo-79-e3n"/>
+                            <constraint firstAttribute="trailing" secondItem="yoP-of-Awj" secondAttribute="trailing" constant="16" id="huP-s3-bPx"/>
+                            <constraint firstItem="Kmp-Wb-fTS" firstAttribute="leading" secondItem="h9x-jb-kU9" secondAttribute="leading" constant="16" id="oO7-qx-YgH"/>
+                            <constraint firstItem="jnJ-Ep-mRr" firstAttribute="top" secondItem="KCI-NJ-eyE" secondAttribute="bottom" constant="8" id="rDj-Nd-3pD"/>
+                            <constraint firstItem="KCI-NJ-eyE" firstAttribute="leading" secondItem="Kmp-Wb-fTS" secondAttribute="leading" id="zzJ-mo-QG4"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tweetTextView" destination="KCI-NJ-eyE" id="abm-YR-ovv"/>
