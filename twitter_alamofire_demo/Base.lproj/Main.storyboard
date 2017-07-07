@@ -258,10 +258,10 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KCI-NJ-eyE" customClass="RSKPlaceholderTextView" customModule="RSKPlaceholderTextView">
-                                <rect key="frame" x="16" y="76" width="343" height="150"/>
+                                <rect key="frame" x="16" y="76" width="343" height="90"/>
                                 <color key="backgroundColor" red="0.79997451382600815" green="0.79610990264810466" blue="0.80383912500391153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="lyD-b7-ENl"/>
+                                    <constraint firstAttribute="height" constant="90" id="lyD-b7-ENl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -273,11 +273,11 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnJ-Ep-mRr">
-                                <rect key="frame" x="273" y="234" width="70" height="30"/>
+                                <rect key="frame" x="273" y="174" width="70" height="25"/>
                                 <color key="backgroundColor" red="1" green="0.059605572920000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="Icg-LX-X9C"/>
-                                    <constraint firstAttribute="height" constant="30" id="OZm-rC-QnA"/>
+                                    <constraint firstAttribute="height" constant="25" id="OZm-rC-QnA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Tweet">
